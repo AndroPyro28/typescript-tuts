@@ -1,13 +1,38 @@
-let names:Array<string> = ['luigi', 'mario', 'yoshi']
-// or let names:string[] = ['luigi', 'etc']
-names.push('browser');
-names.push('1');
+let character:string;
 
-console.log(names)
+let age:number;
+let bool:boolean;
 
-const obj = {
-    name: "mario",
-    age: 50
-};
+age = 30;
+character = "asd"
+bool = true;
 
-console.log(obj)
+ let mixedArr: (string|number|boolean)[] = ['hotdog', 1, false,] 
+
+ mixedArr.push('cheesedog');
+ mixedArr.push(2);
+ mixedArr.push(true);
+ console.log(mixedArr);
+
+ let uid:(string|number);
+
+ uid = "1"
+ uid = 1
+//  uid = false will return error
+
+let obj:object = {
+    name: "andro",
+    age: 21
+}
+
+let anotherObj: { // we explicit it declare with : that means it is a object with name is must be string and age must be number
+    name: string,
+    age: number,
+}
+
+anotherObj = {
+    name: "andro",
+    age:21
+}
+
+anotherObj.age = 23
