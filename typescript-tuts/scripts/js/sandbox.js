@@ -1,7 +1,11 @@
 "use strict";
-let character = 'hotdog';
-console.log(character);
-const circ = (diameter) => {
-    return diameter * Math.PI;
+let names = ['luigi', 'mario', 'yoshi'];
+// or let names:string[] = ['luigi', 'etc']
+names.push('browser');
+names.push('1');
+console.log(names);
+const obj = {
+    name: "mario",
+    age: 50
 };
-console.log(circ(7.5));
+console.log(obj);

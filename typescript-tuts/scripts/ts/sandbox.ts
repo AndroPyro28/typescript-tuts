@@ -1,10 +1,13 @@
-let character = 'hotdog';
+let names:Array<string> = ['luigi', 'mario', 'yoshi']
+// or let names:string[] = ['luigi', 'etc']
+names.push('browser');
+names.push('1');
 
-console.log(character)
+console.log(names)
 
+const obj = {
+    name: "mario",
+    age: 50
+};
 
-const circ = (diameter: number) => {
-    return diameter * Math.PI;
-}
-
-console.log(circ(7.5))
+console.log(obj)
