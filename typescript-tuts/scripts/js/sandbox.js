@@ -1,26 +1,13 @@
 "use strict";
-let character;
-let age;
-let bool;
-age = 30;
-character = "asd";
-bool = true;
-let mixedArr = ['hotdog', 1, false,];
-mixedArr.push('cheesedog');
-mixedArr.push(2);
-mixedArr.push(true);
-console.log(mixedArr);
-let uid;
-uid = "1";
-uid = 1;
-//  uid = false will return error
-let obj = {
-    name: "andro",
-    age: 21
+let greet;
+greet = () => {
+    console.log(`hello ${name}`);
 };
-let anotherObj;
-anotherObj = {
-    name: "andro",
-    age: 21
+const add = (x, y = 11) => {
+    console.log({ x, y });
 };
-anotherObj.age = 23;
+add(5, 50);
+const minus = (x, y) => {
+    return x + y;
+};
+let result = minus(5, 5);

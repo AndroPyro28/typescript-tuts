@@ -1,38 +1,17 @@
-let character:string;
+let greet: Function;
 
-let age:number;
-let bool:boolean;
-
-age = 30;
-character = "asd"
-bool = true;
-
- let mixedArr: (string|number|boolean)[] = ['hotdog', 1, false,] 
-
- mixedArr.push('cheesedog');
- mixedArr.push(2);
- mixedArr.push(true);
- console.log(mixedArr);
-
- let uid:(string|number);
-
- uid = "1"
- uid = 1
-//  uid = false will return error
-
-let obj:object = {
-    name: "andro",
-    age: 21
+greet = () => {
+    console.log(`hello ${name}`)
 }
 
-let anotherObj: { // we explicit it declare with : that means it is a object with name is must be string and age must be number
-    name: string,
-    age: number,
+const add = (x: number, y:(number|string)=11):void => {
+    console.log({x, y})
 }
 
-anotherObj = {
-    name: "andro",
-    age:21
-}
+add(5, 50);
 
-anotherObj.age = 23
+const minus = (x:number, y:number):number => { // explicitly must return number
+    return x + y;
+}
+let result:(number| string) = minus(5,5);
+
