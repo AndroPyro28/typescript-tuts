@@ -1,17 +1,35 @@
-let greet: Function;
+// let greet: Function;
 
-greet = () => {
-    console.log(`hello ${name}`)
+let greet: (x:string, y:string) => void;
+
+greet = (fname, lname) => {
+    console.log(`hello ${fname} ${lname}`);
 }
 
-const add = (x: number, y:(number|string)=11):void => {
-    console.log({x, y})
+let calc: (x:number, y:number,z:string) => number
+
+calc = (fnum=0, snum=0, action="") => {
+    if(action == "+") return fnum + snum;
+    if(action == "-") return fnum - snum;
+    if(action == "*") return fnum * snum;
+    if(action == "/") return fnum / snum;
+
+    return -1;
 }
 
-add(5, 50);
+console.log(calc(1,2,'+'))
 
-const minus = (x:number, y:number):number => { // explicitly must return number
-    return x + y;
+let logDetails: (obj:{name:string, age:number}) => object;
+
+logDetails = (obj) => { // assume this will take an object argument
+    console.log(`hello i am ${obj.name} and i am ${obj.age} yrs old`)
+    return obj;
 }
-let result:(number| string) = minus(5,5);
 
+const person1 = {
+    name: "jean correa",
+    age: 21
+}
+
+
+console.log(logDetails(person1))

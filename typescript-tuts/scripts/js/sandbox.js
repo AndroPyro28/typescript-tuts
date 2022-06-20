@@ -1,13 +1,29 @@
 "use strict";
+// let greet: Function;
 let greet;
-greet = () => {
-    console.log(`hello ${name}`);
+greet = (fname, lname) => {
+    console.log(`hello ${fname} ${lname}`);
 };
-const add = (x, y = 11) => {
-    console.log({ x, y });
+let calc;
+calc = (fnum = 0, snum = 0, action = "") => {
+    if (action == "+")
+        return fnum + snum;
+    if (action == "-")
+        return fnum - snum;
+    if (action == "*")
+        return fnum * snum;
+    if (action == "/")
+        return fnum / snum;
+    return -1;
 };
-add(5, 50);
-const minus = (x, y) => {
-    return x + y;
+console.log(calc(1, 2, '+'));
+let logDetails;
+logDetails = (obj) => {
+    console.log(`hello i am ${obj.name} and i am ${obj.age} yrs old`);
+    return obj;
 };
-let result = minus(5, 5);
+const person1 = {
+    name: "jean correa",
+    age: 21
+};
+console.log(logDetails(person1));
