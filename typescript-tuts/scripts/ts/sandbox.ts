@@ -19,7 +19,8 @@ calc = (fnum=0, snum=0, action="") => {
 
 console.log(calc(1,2,'+'))
 
-let logDetails: (obj:{name:string, age:number}) => object;
+type obj = {name:string, age:number}
+let logDetails: (yes: obj) => object;
 
 logDetails = (obj) => { // assume this will take an object argument
     console.log(`hello i am ${obj.name} and i am ${obj.age} yrs old`)
