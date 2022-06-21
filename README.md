@@ -1,6 +1,6 @@
-# typescript-tuts
+# --typescript-tuts--
 
-# commands
+# *commands*
 
 #tsc.cmd --init // to generate tsconfig.json
 #
