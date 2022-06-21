@@ -1,16 +1,24 @@
-// const anchorTag = document.querySelector('a')!;
+// classes
 
-// console.log(anchorTag.href);
+class Invoice {
+  constructor(
+    public client: string,
+    public details: string,
+    public amount: number
+  ) {} // short hand syntax and it only work with access modifiers
 
-const form = document.querySelector(".new-item-form") as HTMLFormElement;
+  public get format() {
+    return `${this.client} owes $${this.amount} because of ${this.details}`;
+  }
+}
 
-const type = document.querySelector("#type") as HTMLSelectElement;
-const toFrom = document.querySelector("#tofrom") as HTMLInputElement;
-const details = document.querySelector("#details") as HTMLInputElement;
-const amount = document.querySelector("#amount") as HTMLInputElement;
+const invOne = new Invoice("lyssa", "utang", 1500);
+const invTwo = new Invoice("friends ni doms", "utang", 1500);
 
-form.addEventListener("submit", (e: Event): void => {
-  e.preventDefault();
-
-  console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
+console.log({
+  format1: invOne.format,
+  format2: invTwo.format,
 });
+
+let invoices: Invoice[] = [];
+invoices.push(invOne, invTwo);
