@@ -1,15 +1,5 @@
-"use strict";
 // classes
-class Invoice {
-    constructor(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    } // short hand syntax and it only work with access modifiers
-    get format() {
-        return `${this.client} owes $${this.amount} because of ${this.details}`;
-    }
-}
+import Invoice from "./classes/Invoice.js"; // we have to use .js because .ts is not recognizeable by browser
 const invOne = new Invoice("lyssa", "utang", 1500);
 const invTwo = new Invoice("friends ni doms", "utang", 1500);
 console.log({
