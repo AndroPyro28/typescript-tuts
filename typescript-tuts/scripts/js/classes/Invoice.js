@@ -4,7 +4,10 @@ class Invoice {
         this.details = details;
         this.amount = amount;
     } // short hand syntax and it only work with access modifiers
-    get format() {
+    // public get format() { // to make it readonly and not assignable function
+    //   return `${this.client} owes $${this.amount} because of ${this.details}`;
+    // }
+    format() {
         return `${this.client} owes $${this.amount} because of ${this.details}`;
     }
 }

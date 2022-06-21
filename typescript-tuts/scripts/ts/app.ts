@@ -1,35 +1,31 @@
-// classes
 import Invoice from "./classes/Invoice.js"; // we have to use .js because .ts is not recognizeable by browser
+import Payment from "./classes/Payment.js";
+import HasFormatter from "./interfaces/HasFormatter.js";
+import ListTemplate from "./classes/ListTemplate.js";
+const form = document.querySelector('.new-item-form')!;
 
+form.addEventListener('submit', (e: Event):void => {
+    e.preventDefault();
 
-interface isPerson {
-    name:string,
-    age: number,
-    speak(param: string):void,
-    spend(param: number):number,
-}
+    const type = document.querySelector('#type') as HTMLSelectElement;
+    const toFrom = document.querySelector('#tofrom') as HTMLInputElement;
+    const details = document.querySelector('#details') as HTMLInputElement;
+    const amount = document.querySelector('#amount') as HTMLInputElement;
 
-const me: isPerson = {
-    name:'andro',
-    age:21,
-    speak: (name:string):string => `hello ${name}`,
-    spend: (params:number):number => params
-}
+    // list template instance
 
-const greetPerson = (person: isPerson) => {
-    console.log('hello', person.name)
-}
+    const ul = document.querySelector('ul') !;
+    const List = new ListTemplate(ul);
 
-greetPerson(me)
+    let doc:HasFormatter;
 
-const invOne = new Invoice("lyssa", "utang", 1500);
-const invTwo = new Invoice("friends ni doms", "utang", 1500);
+    if(type.value === 'invoice') {
+        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    }
 
-console.log({
-  format1: invOne.format,
-  format2: invTwo.format,
-});
+    else {
+        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    }
 
-
-let invoices: Invoice[] = [];
-invoices.push(invOne, invTwo);
+    List.render(doc, type.value, 'end');
+})
