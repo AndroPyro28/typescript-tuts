@@ -29,3 +29,18 @@ const docAgain = {
     data: [1, 2, 3, 4, 5]
 };
 console.log(doc, docAgain);
+// ENUMS
+var Resource;
+(function (Resource) {
+    Resource[Resource["Instrument"] = 0] = "Instrument";
+    Resource[Resource["Book"] = 1] = "Book";
+    Resource[Resource["Food"] = 2] = "Food";
+    Resource[Resource["Gadget"] = 3] = "Gadget";
+    Resource[Resource["Vehicles"] = 4] = "Vehicles";
+})(Resource || (Resource = {}));
+const anotherDoc = {
+    name: "jean",
+    age: 20,
+    data: Resource.Food,
+};
+console.log(anotherDoc);

@@ -41,3 +41,20 @@ const docAgain:ObjectFormatter<number[]> = {
 }
 
 console.log(doc, docAgain);
+
+// ENUMS
+
+enum Resource {
+  Instrument,
+  Book,
+  Food,
+  Gadget,
+  Vehicles
+}
+
+const anotherDoc:ObjectFormatter<Resource> = { // we pass enums in generics
+  name:"jean",
+  age:20,
+  data: Resource.Food,
+}
+console.log(anotherDoc)
