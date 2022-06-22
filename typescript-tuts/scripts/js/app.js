@@ -12,11 +12,12 @@ form.addEventListener('submit', (e) => {
     const ul = document.querySelector('ul');
     const List = new ListTemplate(ul);
     let doc;
+    let tupleValues = [toFrom.value, details.value, amount.valueAsNumber];
     if (type.value === 'invoice') {
-        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...tupleValues); // same params params datatype
     }
     else {
-        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...tupleValues); // same params params datatype
     }
     List.render(doc, type.value, 'end');
 });

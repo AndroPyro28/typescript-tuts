@@ -60,3 +60,12 @@ const anotherDoc:ObjectFormatter<Resource> = { // we pass enums in generics
 }
 console.log(anotherDoc);
 
+// tuples - will make your array fixed index datatypes like in bellow
+
+let arr:(string|number|boolean)[] = ['ryu', 25, true]
+
+let tupArr:[string, number, boolean] = ['andro', 21, true,]
+
+// tupArr[0] = 1 returns error
+// tupArr[1] = 'andro' returns error
+// tupArr[2] = 'true' returns error

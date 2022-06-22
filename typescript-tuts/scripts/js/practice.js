@@ -44,3 +44,9 @@ const anotherDoc = {
     data: Resource.Food,
 };
 console.log(anotherDoc);
+// tuples - will make your array fixed index datatypes like in bellow
+let arr = ['ryu', 25, true];
+let tupArr = ['andro', 21, true,];
+// tupArr[0] = 1 returns error
+// tupArr[1] = 'andro' returns error
+// tupArr[2] = 'true' returns error
