@@ -26,13 +26,18 @@ docs.push(docOne, docTwo);
 // GENERICS - is like a type or interface but it works in dynamically datatypes it could be interfaces, classes or primitive datatypes like number string bool etc
 // normally in typescript when you pass a object in function it does not automatically  include its property
 // you can extend this with object or {..props} or even interfaces or class
-const addUID = < T extends ObjectFormatter<string> >(obj: T) => {
-  
+const addUID = <T extends ObjectFormatter<string>>(obj: T) => {
   const uid = Math.floor(Math.random() * 100);
 
   return { ...obj, uid }; // we maybe include ...obj but under the hood but it does not included in returned object
 }; // thats why we use generics to keep track what data is passed, generics may beome object or any data type
 
-const doc = addUID({ name: "yoshi", age: 1000, data: '...' });
-console.log(doc)
+const doc = addUID({ name: "yoshi", age: 1000, data: "..." });
 
+const docAgain:ObjectFormatter<number[]> = {
+  name: 'andro',
+  age:50,
+  data: [1,2,3,4,5]
+}
+
+console.log(doc, docAgain);

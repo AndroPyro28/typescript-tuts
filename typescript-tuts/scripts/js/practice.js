@@ -22,5 +22,10 @@ const addUID = (obj) => {
     const uid = Math.floor(Math.random() * 100);
     return Object.assign(Object.assign({}, obj), { uid }); // we maybe include ...obj but under the hood but it does not included in returned object
 }; // thats why we use generics to keep track what data is passed, generics may beome object or any data type
-const doc = addUID({ name: "yoshi", age: 1000, data: '...' });
-console.log(doc);
+const doc = addUID({ name: "yoshi", age: 1000, data: "..." });
+const docAgain = {
+    name: 'andro',
+    age: 50,
+    data: [1, 2, 3, 4, 5]
+};
+console.log(doc, docAgain);
