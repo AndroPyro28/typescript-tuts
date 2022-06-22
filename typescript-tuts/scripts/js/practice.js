@@ -29,7 +29,7 @@ const docAgain = {
     data: [1, 2, 3, 4, 5]
 };
 console.log(doc, docAgain);
-// ENUMS
+// ENUMS - is like a index based that return a number based on index
 var Resource;
 (function (Resource) {
     Resource[Resource["Instrument"] = 0] = "Instrument";

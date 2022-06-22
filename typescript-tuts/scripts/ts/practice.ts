@@ -24,6 +24,7 @@ let docs: HasFormatter[] = [];
 docs.push(docOne, docTwo);
 
 // GENERICS - is like a type or interface but it works in dynamically datatypes it could be interfaces, classes or primitive datatypes like number string bool etc
+
 // normally in typescript when you pass a object in function it does not automatically  include its property
 // you can extend this with object or {..props} or even interfaces or class
 const addUID = <T extends ObjectFormatter<string>>(obj: T) => {
@@ -42,7 +43,7 @@ const docAgain:ObjectFormatter<number[]> = {
 
 console.log(doc, docAgain);
 
-// ENUMS
+// ENUMS - is like a index based that return a number based on index
 
 enum Resource {
   Instrument,
@@ -57,4 +58,5 @@ const anotherDoc:ObjectFormatter<Resource> = { // we pass enums in generics
   age:20,
   data: Resource.Food,
 }
-console.log(anotherDoc)
+console.log(anotherDoc);
+
