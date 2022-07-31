@@ -30,4 +30,5 @@ form.addEventListener('submit', (e: Event):void => {
     }
 
     List.render(doc, type.value, 'end');
+    
 })

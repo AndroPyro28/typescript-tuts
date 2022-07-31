@@ -7,6 +7,8 @@ class Payment implements HasFormatter {
     public amount: number
   ) {}
 
+
+
   // public get format() { // to make it readonly and not assignable function
   //   return `${this.client} owes $${this.amount} because of ${this.details}`;
   // }
